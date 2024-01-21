@@ -20,14 +20,12 @@ services:
     depends_on:
       - db
   frontend:
-    # build: ./frontend/
     image: r1sen007/kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
-    # build: ./nginx/
     image: r1sen007/kittygram_gateway
     env_file: .env
     ports:
